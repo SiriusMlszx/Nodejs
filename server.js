@@ -29,8 +29,19 @@ var server = http.createServer(function (request, response) {
     console.log(request.headers);
     console.log("you ren fang wen le");
     response.setHeader("Content-Type", "text/html;charset=utf-8");
-    response.write(`哈哈哈哈`);
-    response.end("zhe jiu shi xiang ying");
+    response.write(`
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>JS Bin</title>
+  <link rel="stylesheet" href="/x">
+</head>
+<body>
+<h1>啊啊啊</h1>
+</body>
+</html>`);
+    response.end("这就是响应");
   } else if (path === "/x") {
     response.statusCode = 200;
     response.setHeader("Content-Type", "text/css;charset=utf-8");
